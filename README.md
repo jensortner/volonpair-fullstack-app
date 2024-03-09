@@ -4,17 +4,17 @@ This provides the basic look of how the frontend is supposed to look and behave.
 
 
 
-<img src="./assets/home-view.png" alt="./assets/home-view.png" width="200"/>
+<img src="./assets/home-view.png" alt="./assets/home-view.png" width="400"/>
 
 This is the home view where the user can choose either to go to a different page to sign up as a volonter
 of head into a gallery where all the registered volonteers are displayed.
 
 
-<img src="./assets/signup.png" alt="./assets/signup.png" width="200"/>
+<img src="./assets/signup.png" alt="./assets/signup.png" width="400"/>
 
 This is the view for signing up as a new volonteer.
 
 
-<img src="./assets/gallery.png" alt="./assets/gallery.png" width="200"/>
+<img src="./assets/gallery.png" alt="./assets/gallery.png" width="400"/>
 
 This is the wiev of the gallery where one can browse all the signed up volonteers.
