@@ -1,6 +1,8 @@
-# Volonpair frontend
+# Volonpair 
 
-This provides the basic look of how the frontend is supposed to look and behave. The app will be build with React and TypeScript and communicate with a api to send an retrive volonteer data.
+This provides the basic look of how the frontend is supposed to look and behave. The app will be build with React and TypeScript and communicate with a api to send an retrive volonteer data. 
+
+Below serves as an initial idea of how what the project will result in however things such as style, UX/UI and choise of technnologies might be subject to change thoughout the project due to time constraints and other factors. 
 
 
 
@@ -18,3 +20,8 @@ This is the view for signing up as a new volonteer.
 <img src="./assets/gallery.png" alt="./assets/gallery.png" width="400"/>
 
 This is the wiev of the gallery where one can browse all the signed up volonteers.
+
+<img src="./assets/techstack.png" alt="./assets/techstack.png" width="400"/>
+
+Above shows an initial idea of what technologies that will be used throughout this project for the frontend and backend.
+
