@@ -1,4 +1,4 @@
-# Volonpair frontend
+# Volonpair fullstack app
 
 This provides the basic look of how the frontend is supposed to look and behave. The app will be build with React and TypeScript and communicate with a api to send an retrive volonteer data.
 
