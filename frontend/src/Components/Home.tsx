@@ -15,7 +15,7 @@ function Home() {
       <button>Find VolunPairs</button>
     </div>
     </>
-  )
+  ) 
 }
 
 export default Home
