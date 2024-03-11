@@ -6,6 +6,12 @@ import './AddVolunteer.css'
 function AddVolunteer() {
     const [showErrorMsg, setShowErrorMsg] = useState<boolean>();
     const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>();
+    const [name, setName ] = useState ('')
+    const [age, setAge ] = useState (0)
+    const [occupation, setOccupation ] = useState ('')
+    const [email, setEmail ] = useState ('')
+    const [about, setAbout ] = useState ('')
+
    async function handleSubmit(event: any) {
         event.preventDefault();
 
@@ -16,17 +22,21 @@ function AddVolunteer() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-
-            name: event.target.name.value,
-            age: event.target.age.value,
-            occupation: event.target.occupation.value,
-            email: event.target.email.value,
-            about: event.target.about.value,
-        }),
+            name,
+            age,
+            occupation,
+            email,
+            about}),
       })
         .then((data) => data.json())
         .then(data => setShowSuccessMsg(true))
         .catch(e => setShowErrorMsg(true))
+
+      setName('')
+      setAge(0)
+      setEmail('')
+      setOccupation('')
+      setAbout('')  
     }
     useEffect(() =>{
         
@@ -52,38 +62,43 @@ function AddVolunteer() {
 
       <input 
         type="text" 
-        name="name"
+        value={name}
         placeholder="Full name"
         className="input input-bordered w-full max-w-xs" 
+        onChange={(e) => setName(e.target.value)}
          
       />
         <input 
           type="number" 
-          name="age"
+          value={age}
           placeholder="Age"
-          className="input input-bordered w-full max-w-xs" 
+          className="input input-bordered w-full max-w-xs"
+          onChange={(e) => setAge(e.target.valueAsNumber)} 
         />
 
         <input 
           type="text" 
-          name="email" 
+          value={email} 
             placeholder="Email"
             className="input input-bordered w-full max-w-xs" 
+            onChange={(e) => setEmail(e.target.value)} 
         />
 
         <input 
           type="text" 
-          name="occupation"
+          value={occupation}
             placeholder="occupation"
-            className="input input-bordered w-full max-w-xs" 
+            className="input input-bordered w-full max-w-xs"
+            onChange={(e) => setOccupation(e.target.value)}  
 
         />
 
         <input 
           type="text" 
-          name="about"
+          value={about}
           placeholder="Tell us about yourself"
-          className="input input-bordered input-lg w-full max-w-xs" 
+          className="input input-bordered input-lg w-full max-w-xs"
+          onChange={(e) => setAbout(e.target.value)}  
         />
         <div className='addvolunteer__form-button'>
         <input  className="btn btn-wide" type="submit" />
