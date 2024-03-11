@@ -2,7 +2,9 @@
 import './Home.css'
 import Nav from './Nav'
 
+
 function Home() {
+
   
 
   return (
