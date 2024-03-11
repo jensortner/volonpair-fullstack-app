@@ -5,7 +5,6 @@ function VolunteerGallery() {
     <h1>Availible Volunteers</h1>
     
     <Volunteer/>
-    
     </>
     )
 }
