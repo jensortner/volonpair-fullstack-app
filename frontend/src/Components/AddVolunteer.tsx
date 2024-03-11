@@ -1,9 +1,11 @@
 
+import { useEffect, useState } from 'react';
 import './AddVolunteer.css'
 
 
 function AddVolunteer() {
-
+    const [showErrorMsg, setShowErrorMsg] = useState<boolean>();
+    const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>();
    async function handleSubmit(event: any) {
         event.preventDefault();
 
@@ -23,53 +25,87 @@ function AddVolunteer() {
         }),
       })
         .then((data) => data.json())
-        .then(data => alert("Volunteer added!"))
-        .catch(e => alert("Failed to add"))
+        .then(data => setShowSuccessMsg(true))
+        .catch(e => setShowErrorMsg(true))
     }
+    useEffect(() =>{
+        
+        setTimeout(() => {
+            setShowSuccessMsg(false)
+          }, 3000);
 
+    },[showSuccessMsg])
+
+    useEffect(() =>{
+        
+        setTimeout(() => {
+            setShowErrorMsg(false)
+          }, 3000); 
+          
+    },[showErrorMsg])
 
 
     return (
-    <>
+
+    <div className="addvolunteer__form-container">
     <form className="addvolunteer__form" onSubmit={handleSubmit}>
 
       <input 
         type="text" 
         name="name"
-        placeholder="Full name" 
+        placeholder="Full name"
+        className="input input-bordered w-full max-w-xs" 
          
       />
         <input 
           type="number" 
           name="age"
-          placeholder="Age" 
+          placeholder="Age"
+          className="input input-bordered w-full max-w-xs" 
         />
 
         <input 
           type="text" 
           name="email" 
             placeholder="Email"
+            className="input input-bordered w-full max-w-xs" 
         />
-
 
         <input 
           type="text" 
           name="occupation"
             placeholder="occupation"
+            className="input input-bordered w-full max-w-xs" 
 
         />
-    
+
         <input 
           type="text" 
           name="about"
-          placeholder="Tell us about yourself" 
+          placeholder="Tell us about yourself"
+          className="input input-bordered input-lg w-full max-w-xs" 
         />
+        <div className='addvolunteer__form-button'>
+        <input  className="btn btn-wide" type="submit" />
+        </div>
+    </form>
 
-        <input  className="addvolunteer__form-button" type="submit" />
-        </form>
+        {showSuccessMsg && <div className='addvolunteer__form-messsage'><div role="alert" className="alert alert-success">
+        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" 
+        fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" 
+        strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <span>Your profile was sucessfully added!</span>
+        </div></div>}
         
+        {showErrorMsg && <div className='addvolunteer__form-messsage'><div role="alert" className="alert alert-error">
+        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" 
+        fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" 
+        strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <span>Error! Failed to add.</span>
+        </div></div>}
     
-    </>)
+    </div>
+        )
 }
 
 export default AddVolunteer

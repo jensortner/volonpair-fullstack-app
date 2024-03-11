@@ -34,23 +34,6 @@ function Nav () {
     </button>
   </div>
 </div>
-        {/* <div className='nav__logo-container'>
-        <img src="src/assets/logo.png" alt="src/assets/logo.png" width="400"/>
-        </div>
-        <div className="navbar">
-        <ul className="nav__link-list">
-          <li >
-            <Link to="/">Home</Link>
-          </li>
-          <li className="nav__link-item">
-            <Link to="/addvolunteer">Add Volunteer</Link>
-          </li>
-          <li className="nav__link-item">
-            <Link to="/volunteers">Available Volunteers</Link>
-          </li>
-        </ul>
-        </div>
-      <Outlet /> */}
       <Outlet /> 
         </>
 
