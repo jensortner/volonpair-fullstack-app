@@ -2,7 +2,7 @@ import Volunteer from "./Volunteer"
 
 function VolunteerGallery() {
     return (<>
-    <h1>Availible Volunteers</h1>
+    <h1 className="text-3xl font-bold underline" >Availible Volunteers</h1>
     
     <Volunteer/>
     </>

@@ -65,7 +65,7 @@ function AddVolunteer() {
           placeholder="Tell us about yourself" 
         />
 
-        <input className="addvolunteer__form-button" type="submit" />
+        <input  className="addvolunteer__form-button" type="submit" />
         </form>
         
     
