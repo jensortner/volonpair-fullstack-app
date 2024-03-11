@@ -1,6 +1,6 @@
 import AddVolunteer from "./AddVolunteer";
 import Home from "./Home";
-
+import VolunteerGallery from "./VolunteerGallery";
 import {
     BrowserRouter,
     Routes,
@@ -19,6 +19,7 @@ function App() {
     <Route path="/" element={<Nav />} >
       <Route path="/" element={<Home/>}/>
       <Route path="/addvolunteer"  element={<AddVolunteer />}/>
+      <Route path="/volunteers"  element={<VolunteerGallery />}/>
     </Route>
       </Routes>
     </BrowserRouter>

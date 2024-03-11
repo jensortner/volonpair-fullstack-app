@@ -18,11 +18,12 @@ function Nav () {
           <li className="nav__link-item">
             <Link to="/addvolunteer">Add Volunteer</Link>
           </li>
+          <li className="nav__link-item">
+            <Link to="/volunteers">Available Volunteers</Link>
+          </li>
         </ul>
         </nav>
-
       <Outlet />
-        
         </>
     )
 }

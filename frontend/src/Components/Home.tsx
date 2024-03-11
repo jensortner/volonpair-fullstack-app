@@ -1,4 +1,4 @@
-import Nav from './Nav'
+
 import './Home.css'
 
 function Home() {
