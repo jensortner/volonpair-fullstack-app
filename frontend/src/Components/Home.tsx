@@ -1,7 +1,5 @@
-
-import './Home.css'
 import Nav from './Nav'
-
+import './Home.css'
 
 function Home() {
 
@@ -9,11 +7,9 @@ function Home() {
 
   return (
     <>
-    <Nav/>
-    <div className='home__button-container'>
-      <button>Become a VolunPair</button>
-      <button>Find VolunPairs</button>
-    </div>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, atque.
+    </p>
     </>
   ) 
 }
