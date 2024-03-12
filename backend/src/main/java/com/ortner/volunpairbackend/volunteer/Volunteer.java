@@ -1,15 +1,29 @@
 package com.ortner.volunpairbackend.volunteer;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "volunteer")
 public class Volunteer {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "volunteer_id")
+    private Long id;
+    @Column(name = "volunteer_name")
     private String name;
+    @Column(name = "volunteer_age")
     private int age;
+    @Column(name = "volunteer_occupation")
+    private String occupation;
+    @Column(name = "volunteer_email")
     private String email;
+    @Column(name = "volunteer_about")
     private String about;
 
-    public Volunteer( String name, int age, String email, String about) {
+    public Volunteer() {
+    }
+
+    public Volunteer(String name, int age, String email, String about) {
         this.name = name;
         this.age = age;
         this.email = email;

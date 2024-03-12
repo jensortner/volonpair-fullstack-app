@@ -1,0 +1,27 @@
+debug: true
+server:
+  port: 3000
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/volunpair
+    username: volunpair
+    password: ${DB_PASSWORD}
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+
+#  sql:
+#    init:
+#      data-locations: classpath:data.sql
+#      platform: postgresql
+#      mode: always
+  output:
+    ansi:
+      enabled: always
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
