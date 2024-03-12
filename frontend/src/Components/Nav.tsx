@@ -22,7 +22,7 @@ function Nav () {
     </div>
   </div>
   <div className="navbar-center">
-  <Link to="/"><a className="btn btn-ghost text-xl">VolunPair</a></Link>
+  <Link className="btn btn-ghost text-xl" to="/">VolunPair</Link>
   </div>
   <div className="navbar-end">
     <button className="btn btn-ghost btn-circle">
