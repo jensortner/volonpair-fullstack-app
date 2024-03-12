@@ -3,19 +3,19 @@ server:
   port: 3000
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/volunpair
+    url: jdbc:postgresql://localhost:5432/volunpairdb
     username: volunpair
-    password: ${DB_PASSWORD}
+    password:
   jpa:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
 
-#  sql:
-#    init:
-#      data-locations: classpath:data.sql
-#      platform: postgresql
-#      mode: always
+  sql:
+    init:
+      data-locations: classpath:data.sql
+      platform: postgresql
+      mode: always
   output:
     ansi:
       enabled: always
