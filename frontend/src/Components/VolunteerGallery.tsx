@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import Volunteer from "./Volunteer"
+import './VolunteerGallery.css'
 
 type VolunteerToBeAdded = {
+    id: number,
     name: string,
     age:  number,
     occupation: string,
@@ -30,13 +32,15 @@ function VolunteerGallery() {
 
 
     
-    return (<>
+    return (
+        <div className="volunteer__gallery-container">
+        {volunteers.map(volunteer => (
+            <Volunteer id={volunteer.id} name={volunteer.name} age={volunteer.age} 
+            occupation={volunteer.occupation} 
+            email={volunteer.email} about={volunteer.about}/>
+        ))}
+        </div>
    
-    {volunteers.map(volunteer => (
-        <Volunteer name={volunteer.name} age={volunteer.age} 
-        occupation={volunteer.occupation} 
-        email={volunteer.email} about={volunteer.about}/>
-    ))}</>
     )
 }
 export default VolunteerGallery

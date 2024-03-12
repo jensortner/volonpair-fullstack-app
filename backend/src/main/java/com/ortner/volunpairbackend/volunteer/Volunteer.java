@@ -2,6 +2,8 @@ package com.ortner.volunpairbackend.volunteer;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "volunteer")
 public class Volunteer {
@@ -23,13 +25,16 @@ public class Volunteer {
     public Volunteer() {
     }
 
-    public Volunteer(String name, int age, String email, String about) {
+    public Volunteer(String name, int age, String email, String about, String occupation) {
         this.name = name;
         this.age = age;
         this.email = email;
         this.about = about;
+        this.occupation = occupation;
     }
-
+    public Long getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
@@ -60,5 +65,22 @@ public class Volunteer {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public static Volunteer fromVolunteerDTO(VolunteerDTO volunteer) {
+        String name = volunteer.name();
+        int age = volunteer.age();
+        String about = volunteer.about();
+        String occupation = volunteer.occupation();
+        String email = volunteer.email();
+        return new Volunteer(name,age,email,about,occupation);
     }
 }

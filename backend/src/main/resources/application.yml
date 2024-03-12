@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/volunpairdb
     username: volunpair
-    password:
+    password: secret
   jpa:
     defer-datasource-initialization: true
     hibernate:

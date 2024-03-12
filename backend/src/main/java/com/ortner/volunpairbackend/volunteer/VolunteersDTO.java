@@ -1,2 +1,6 @@
-package com.ortner.volunpairbackend.volunteer;public record VolunteersDTO() {
+package com.ortner.volunpairbackend.volunteer;
+
+import java.util.List;
+
+public record VolunteersDTO(List<Volunteer> volunteerlist) {
 }

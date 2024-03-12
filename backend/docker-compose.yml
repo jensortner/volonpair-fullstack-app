@@ -6,7 +6,7 @@ services:
     container_name: 'volunpair-postgres'
     environment:
       - POSTGRES_USER=volunpair
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=secret
       - POSTGRES_DB=volunpairdb
     volumes:
       - ./data/pgdata:/var/lib/postgresql/data
