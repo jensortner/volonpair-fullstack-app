@@ -17,16 +17,16 @@ function AddVolunteer() {
 
 
       await fetch('http://localhost:3000/api/volunteer', {
-        method: 'post',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            name,
-            age,
-            occupation,
-            email,
-            about}),
+          "name": name,
+          "age":  age,
+          "occupation": occupation,
+          "email": email,
+          "about": about}),
       })
         .then((data) => data.json())
         .then(data => setShowSuccessMsg(true))
