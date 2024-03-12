@@ -1,11 +1,13 @@
 
-# Volonpair 
+# Volunpair 
 
 
 This provides the basic look of how the frontend is supposed to look and behave. The app will be build with React and TypeScript and communicate with a api to send an retrive volonteer data. 
 
 Below serves as an initial idea of how what the project will result in however things such as style, UX/UI and choise of technnologies might be subject to change thoughout the project due to time constraints and other factors. 
 
+You can find my blog for daily updates as the project goes along at:
+https://free-4737433.webadorsite.com/blog
 
 
 <img src="./assets/home-view.png" alt="./assets/home-view.png" width="400"/>
