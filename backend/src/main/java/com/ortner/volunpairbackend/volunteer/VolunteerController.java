@@ -32,12 +32,5 @@ public class VolunteerController {
         return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping
-    @CrossOrigin
-    public ResponseEntity<Void> deleteVolunteer(@RequestParam String id){
-        repository.deleteById(id);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
-    }
-
 
 }
