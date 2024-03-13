@@ -47,9 +47,7 @@ function VolunteerGallery() {
 
     
     return (
-
-        
-        <div className="volunteer__gallery">
+        <>
         <div className="volunteer__gallery-searchbar">
         <label className="input input-bordered flex items-center gap-2">
         <input onChange={(e) => searchOccupation(e.target.value)} type="text" className="grow" 
@@ -60,6 +58,7 @@ function VolunteerGallery() {
          7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
         </label>
          </div>
+        
   
         <div className="volunteer__gallery-container">
 
@@ -71,7 +70,7 @@ function VolunteerGallery() {
             </div>
             ))}
         </div>
-        </div>
+        </>
         
         
    

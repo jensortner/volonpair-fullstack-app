@@ -1,15 +1,16 @@
 .volunteer__gallery {
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
+
 }
 .volunteer__gallery-searchbar {
-    margin: 50px;
-
+    margin: 15px;
 }
 .volunteer__gallery-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
       
 }
 .volunteer__gallery-container-card{
