@@ -14,22 +14,22 @@ type VolunteerToBeAdded = {
 function VolunteerGallery() {
 
     const [volunteers, setVolunteers] = useState<VolunteerToBeAdded[]>([]);
+    const [searchInput, setSearchInput] = useState<String>('');
 
     useEffect(() => {
 
-        fetch('http://localhost:3000/api/volunteer', {
+        fetch('http://localhost:3000/api/volunteer?occupation=' + searchInput, {
             method: 'get'
           })
             .then((response) => response.json())
             .then((data) => {
                 setVolunteers(data.volunteerlist)
-                console.log(data)
             })     
 
-    },[])
+    },[searchInput])
 
-    function searchOccupation(searchInput: string) {
-        console.log(searchInput)
+    function searchOccupation(input: string) {
+        setSearchInput(input)
     }
 
     
