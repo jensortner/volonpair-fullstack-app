@@ -15,6 +15,7 @@ function VolunteerGallery() {
 
     const [volunteers, setVolunteers] = useState<VolunteerToBeAdded[]>([]);
     const [searchInput, setSearchInput] = useState<String>('');
+    const [removeVolunteer, setRemoveVolunteer] = useState<number>();
 
     useEffect(() => {
 
@@ -31,6 +32,10 @@ function VolunteerGallery() {
     function searchOccupation(input: string) {
         setSearchInput(input)
     }
+
+    useEffect(()=>{
+        console.log("id: ", removeVolunteer)
+    },[removeVolunteer])
 
     
     return (
@@ -49,7 +54,7 @@ function VolunteerGallery() {
         {volunteers.map(volunteer => (
             <Volunteer id={volunteer.id} name={volunteer.name} age={volunteer.age} 
             occupation={volunteer.occupation} 
-            email={volunteer.email} about={volunteer.about}/>
+            email={volunteer.email} about={volunteer.about} setRemoveVolunteer={setRemoveVolunteer}/>
             ))}
         </div>
         </div>

@@ -34,7 +34,7 @@ public class VolunteerController {
             return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
         }
 
-        List<Volunteer> volunteers = repository.findAllByOccupationIgnoreCase(occupation);
+        List<Volunteer> volunteers = repository.findAllByOccupationContainingIgnoreCase(occupation);
         return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
     }
 
