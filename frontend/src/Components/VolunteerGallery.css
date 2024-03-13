@@ -6,6 +6,7 @@
 }
 .volunteer__gallery-searchbar {
     margin: 15px;
+    margin-bottom: 40px;
 }
 .volunteer__gallery-container {
     display: flex;
