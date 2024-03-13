@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import Volunteer from "./Volunteer"
 import './VolunteerGallery.css'
 
@@ -24,7 +24,6 @@ function VolunteerGallery() {
             .then((response) => response.json())
             .then((data) => {
                 setVolunteers(data.volunteerlist)
-                console.log(data.volunteerist)
             })     
 
     },[searchInput])
@@ -48,7 +47,8 @@ function VolunteerGallery() {
 
     
     return (
-    
+
+        
         <div className="volunteer__gallery">
         <div className="volunteer__gallery-searchbar">
         <label className="input input-bordered flex items-center gap-2">
@@ -60,15 +60,19 @@ function VolunteerGallery() {
          7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
         </label>
          </div>
+  
         <div className="volunteer__gallery-container">
 
         {volunteers.map(volunteer => (
+            <div key={volunteer.id} className="volunteer__gallery-container-card">
             <Volunteer id={volunteer.id} name={volunteer.name} age={volunteer.age} 
             occupation={volunteer.occupation} 
             email={volunteer.email} city={volunteer.city} setRemoveVolunteer={removeVolunteer}/>
+            </div>
             ))}
         </div>
         </div>
+        
         
    
     )

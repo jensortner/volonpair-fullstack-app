@@ -12,6 +12,9 @@
     flex-direction: column;
       
 }
+.volunteer__gallery-container-card{
+    margin-bottom: 15px;
+    }
 
 @media screen and (min-width: 992px){
     .volunteer__gallery-container { 

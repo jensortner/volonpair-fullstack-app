@@ -15,7 +15,7 @@ function Volunteer(volunteerData: volunteerProps) {
     const { id, name, age, occupation, email, city, setRemoveVolunteer} = volunteerData;
 
     return (
-        <div className="volunteer__container">
+        
         <div key={id} className="card w-96 bg-base-100 shadow-xl">
         <div className="dropdown dropdown-bottom">
         <div tabIndex={0} role="button" className="btn btn-lg btn-ghost">...</div>
@@ -33,7 +33,6 @@ function Volunteer(volunteerData: volunteerProps) {
             <p>occupation: {occupation}</p>
             <p>email: {email}</p>
             <p>city: {city}</p>
-        </div>
         </div>
         </div>
     )

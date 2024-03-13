@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface VolunteerRepository extends JpaRepository<Volunteer,String> {
-    List<Volunteer> findAllByOccupationContainingIgnoreCase(String searchTerm);
+    List<Volunteer> findAllByOccupationContainingIgnoreCaseOrCityContainingIgnoreCase(String searchTerm1, String searchTerm2);
 }
