@@ -1,7 +1,17 @@
+.volunteer__gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+.volunteer__gallery-searchbar {
+
+    margin: 50px;
+
+}
 .volunteer__gallery-container {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+      
 }
 
 @media screen and (min-width: 992px){
