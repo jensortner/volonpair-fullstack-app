@@ -36,7 +36,7 @@ public class VolunteerController {
     @CrossOrigin
     public ResponseEntity<Void> deleteVolunteer(@RequestParam String id){
         repository.deleteById(id);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);   
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 
