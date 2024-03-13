@@ -26,9 +26,9 @@ public class VolunteerController {
         VolunteerResponseDTO resp = new VolunteerResponseDTO(volunteer.getId().toString(), volunteer.getName());
          return new ResponseEntity<>(resp, HttpStatus.CREATED);
     }
-    @GetMapping
+    @GetMapping()
     @CrossOrigin
-    public ResponseEntity<VolunteersDTO> getVolunteers(@RequestParam String occupation){
+    public ResponseEntity<VolunteersDTO> getVolunteersByOccupation(@RequestParam String occupation){
 
         if (occupation.isEmpty()) {
             List<Volunteer> volunteers = repository.findAll();
@@ -39,11 +39,19 @@ public class VolunteerController {
         return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/all")
+    @CrossOrigin
+    public ResponseEntity<VolunteersDTO> getAllVolunteers(){
+        List<Volunteer> volunteers = repository.findAll();
+        return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
+
+    }
+
     @DeleteMapping
     @CrossOrigin
-    public ResponseEntity<Void> deleteVolunteer(@RequestParam String id) {
+    public ResponseEntity<VolunteersDTO> deleteVolunteer(@RequestParam String id) {
         repository.deleteById(id);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(new VolunteersDTO(repository.findAll()),HttpStatus.ACCEPTED);
     }
 
 

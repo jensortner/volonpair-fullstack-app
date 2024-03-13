@@ -15,10 +15,9 @@ function VolunteerGallery() {
 
     const [volunteers, setVolunteers] = useState<VolunteerToBeAdded[]>([]);
     const [searchInput, setSearchInput] = useState<String>('');
-    const [removeVolunteer, setRemoveVolunteer] = useState<number>();
 
     useEffect(() => {
-
+       
         fetch('http://localhost:3000/api/volunteer?occupation=' + searchInput, {
             method: 'get'
           })
@@ -33,9 +32,18 @@ function VolunteerGallery() {
         setSearchInput(input)
     }
 
-    useEffect(()=>{
-        console.log("id: ", removeVolunteer)
-    },[removeVolunteer])
+    function removeVolunteer(id: number){ 
+
+        fetch('http://localhost:3000/api/volunteer?id=' + id, {
+            method: 'delete'
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            setVolunteers(data.volunteerlist)
+        })
+    }
+
+     
 
     
     return (
@@ -54,7 +62,7 @@ function VolunteerGallery() {
         {volunteers.map(volunteer => (
             <Volunteer id={volunteer.id} name={volunteer.name} age={volunteer.age} 
             occupation={volunteer.occupation} 
-            email={volunteer.email} about={volunteer.about} setRemoveVolunteer={setRemoveVolunteer}/>
+            email={volunteer.email} about={volunteer.about} setRemoveVolunteer={removeVolunteer}/>
             ))}
         </div>
         </div>
