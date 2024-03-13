@@ -27,8 +27,13 @@ public class VolunteerController {
     }
     @GetMapping
     @CrossOrigin
-    public ResponseEntity<VolunteersDTO> getVolunteers(){
-        List<Volunteer> volunteers = repository.findAll();
+    public ResponseEntity<VolunteersDTO> getVolunteers(@RequestParam String searchTerm){
+        if (searchTerm.isEmpty()) {
+            List<Volunteer> volunteers = repository.findAll();
+            return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
+        }
+
+        List<Volunteer> volunteers = repository.findAllByOccupationIgnoreCase(searchTerm);
         return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
     }
 
