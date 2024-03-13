@@ -10,9 +10,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-top: 40px;
+}
+.addvolunteer__form-container input {
+    margin-bottom: 10px;
 }
 .addvolunteer__form-button {
- margin-top: 10px;
+    margin-top: 10px;
 }
 
 .addvolunteer__form-messsage {
@@ -20,3 +24,5 @@
     width: 250px;
 
 }
+
+

@@ -28,9 +28,11 @@ function AddVolunteer() {
           "email": email,
           "about": about}),
       })
-        .then((data) => data.json())
-        .then(data => setShowSuccessMsg(true))
-        .catch(e => setShowErrorMsg(true))
+        .then((data) => {
+          data.json()
+          setShowSuccessMsg(true)
+        })
+        .catch(() => {setShowErrorMsg(true)})
 
       setName('')
       setAge(0)
@@ -59,7 +61,6 @@ function AddVolunteer() {
 
     <div className="addvolunteer__form-container">
     <form className="addvolunteer__form" onSubmit={handleSubmit}>
-
       <input 
         type="text" 
         value={name}
@@ -87,7 +88,7 @@ function AddVolunteer() {
         <input 
           type="text" 
           value={occupation}
-            placeholder="occupation"
+            placeholder="Occupation"
             className="input input-bordered w-full max-w-xs"
             onChange={(e) => setOccupation(e.target.value)}  
 
@@ -96,8 +97,8 @@ function AddVolunteer() {
         <input 
           type="text" 
           value={about}
-          placeholder="Tell us about yourself"
-          className="input input-bordered input-lg w-full max-w-xs"
+          placeholder="City"
+          className="input input-bordered w-full max-w-xs"
           onChange={(e) => setAbout(e.target.value)}  
         />
         <div className='addvolunteer__form-button'>
