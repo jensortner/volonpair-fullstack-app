@@ -5,14 +5,14 @@ type volunteerProps = {
     age:  number,
     occupation: string,
     email: string,
-    about: string,
+    city: string,
     setRemoveVolunteer: any
 
 }
 
 function Volunteer(volunteerData: volunteerProps) {
 
-    const { id, name, age, occupation, email, about, setRemoveVolunteer} = volunteerData;
+    const { id, name, age, occupation, email, city, setRemoveVolunteer} = volunteerData;
 
     return (
         <div className="volunteer__container">
@@ -32,7 +32,7 @@ function Volunteer(volunteerData: volunteerProps) {
             <p>age: {age}</p>
             <p>occupation: {occupation}</p>
             <p>email: {email}</p>
-            <p>about: {about}</p>
+            <p>city: {city}</p>
         </div>
         </div>
         </div>

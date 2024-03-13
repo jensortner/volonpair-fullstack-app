@@ -19,17 +19,19 @@ public class Volunteer {
     private String occupation;
     @Column(name = "volunteer_email")
     private String email;
-    @Column(name = "volunteer_about")
-    private String about;
+    @Column(name = "volunteer_city")
+    private String city;
 
     public Volunteer() {
     }
 
-    public Volunteer(String name, int age, String email, String about, String occupation) {
+
+
+    public Volunteer(String name, int age, String email, String city, String occupation) {
         this.name = name;
         this.age = age;
         this.email = email;
-        this.about = about;
+        this.city = city;
         this.occupation = occupation;
     }
     public Long getId() {
@@ -38,49 +40,27 @@ public class Volunteer {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAge() {
         return age;
     }
-
-    public void setAge(int age) {
-        this.age = age;
+    public String getOccupation() {
+        return occupation;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAbout() {
-        return about;
-    }
-
-    public void setAbout(String about) {
-        this.about = about;
-    }
-
-    public String getOccupation() {
-        return occupation;
-    }
-
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public String getCity() {
+        return city;
     }
 
     public static Volunteer fromVolunteerDTO(VolunteerDTO volunteer) {
         String name = volunteer.name();
         int age = volunteer.age();
-        String about = volunteer.about();
+        String city = volunteer.city();
         String occupation = volunteer.occupation();
         String email = volunteer.email();
-        return new Volunteer(name,age,email,about,occupation);
+        return new Volunteer(name,age,email,city,occupation);
     }
 }

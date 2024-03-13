@@ -28,23 +28,15 @@ public class VolunteerController {
     }
     @GetMapping()
     @CrossOrigin
-    public ResponseEntity<VolunteersDTO> getVolunteersByOccupation(@RequestParam String occupation){
+    public ResponseEntity<VolunteersDTO> getVolunteers(@RequestParam String input){
 
-        if (occupation.isEmpty()) {
+        if (input.isEmpty()) {
             List<Volunteer> volunteers = repository.findAll();
             return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
         }
 
-        List<Volunteer> volunteers = repository.findAllByOccupationContainingIgnoreCase(occupation);
+        List<Volunteer> volunteers = repository.findAllByOccupationContainingIgnoreCase(input);
         return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
-    }
-
-    @GetMapping("/all")
-    @CrossOrigin
-    public ResponseEntity<VolunteersDTO> getAllVolunteers(){
-        List<Volunteer> volunteers = repository.findAll();
-        return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
-
     }
 
     @DeleteMapping
