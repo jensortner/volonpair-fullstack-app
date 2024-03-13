@@ -1,5 +1,6 @@
 package com.ortner.volunpairbackend.volunteer;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +37,13 @@ public class VolunteerController {
 
         List<Volunteer> volunteers = repository.findAllByOccupationContainingIgnoreCase(occupation);
         return new ResponseEntity<>(new VolunteersDTO(volunteers), HttpStatus.ACCEPTED);
+    }
+
+    @DeleteMapping
+    @CrossOrigin
+    public ResponseEntity<Void> deleteVolunteer(@RequestParam String id) {
+        repository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 
