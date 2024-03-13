@@ -1,4 +1,3 @@
-import './Volunteer.css'
 type volunteerProps = {
     id: number,
     name: string,
