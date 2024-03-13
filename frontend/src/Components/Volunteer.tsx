@@ -28,10 +28,10 @@ function Volunteer(volunteerData: volunteerProps) {
         </figure>
         <div className="card-body items-center text-center">
             <h2 className="card-title">{name}</h2>
-            <p>age: {age}</p>
-            <p>occupation: {occupation}</p>
-            <p>email: {email}</p>
-            <p>city: {city}</p>
+            <p>{age} years old</p>
+            <p>{occupation}</p>
+            <p>{email}</p>
+            <p>{city}</p>
         </div>
         </div>
     )
