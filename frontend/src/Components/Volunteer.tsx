@@ -1,17 +1,18 @@
-type volunteerProps = {
+type VolunteerProps = {
     id: number,
     name: string,
     age:  number,
     occupation: string,
     email: string,
     city: string,
+    imgUrl: string,
     setRemoveVolunteer: any
 
 }
 
-function Volunteer(volunteerData: volunteerProps) {
+function Volunteer(volunteerData: VolunteerProps) {
 
-    const { id, name, age, occupation, email, city, setRemoveVolunteer} = volunteerData;
+    const { id, name, age, occupation, email, city, imgUrl, setRemoveVolunteer} = volunteerData;
 
     return (
         
@@ -24,7 +25,7 @@ function Volunteer(volunteerData: volunteerProps) {
         </ul>
         </div>
         <figure className="px-10 pt-10">
-            <img src="src/assets/avatar.png" alt="src/assets/avatar.png" className="rounded-xl" />
+            <img src={imgUrl} alt="src/assets/avatar.png" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
             <h2 className="card-title">{name}</h2>

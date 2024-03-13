@@ -21,19 +21,24 @@ public class Volunteer {
     private String email;
     @Column(name = "volunteer_city")
     private String city;
-
+    @Column(name = "volunteer_imgurl")
+    private String imgUrl;
     public Volunteer() {
     }
 
 
 
-    public Volunteer(String name, int age, String email, String city, String occupation) {
+    public Volunteer(String name, int age, String email, String city, String occupation, String imgUrl) {
         this.name = name;
         this.age = age;
         this.email = email;
         this.city = city;
         this.occupation = occupation;
+        this.imgUrl = imgUrl;
     }
+
+
+
     public Long getId() {
         return id;
     }
@@ -54,6 +59,9 @@ public class Volunteer {
     public String getCity() {
         return city;
     }
+    public String getImgUrl() {
+        return imgUrl;
+    }
 
     public static Volunteer fromVolunteerDTO(VolunteerDTO volunteer) {
         String name = volunteer.name();
@@ -61,6 +69,7 @@ public class Volunteer {
         String city = volunteer.city();
         String occupation = volunteer.occupation();
         String email = volunteer.email();
-        return new Volunteer(name,age,email,city,occupation);
+        String imgUrl = volunteer.imgUrl();
+        return new Volunteer(name,age,email,city,occupation,imgUrl);
     }
 }

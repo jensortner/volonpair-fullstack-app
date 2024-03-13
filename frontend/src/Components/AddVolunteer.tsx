@@ -10,7 +10,8 @@ function AddVolunteer() {
     const [age, setAge ] = useState (0)
     const [occupation, setOccupation ] = useState ('')
     const [email, setEmail ] = useState ('')
-    const [about, setAbout ] = useState ('')
+    const [city, setCity ] = useState ('')
+    const imgUrl = 'https://avatar.iran.liara.run/public'
 
    async function handleSubmit(event: any) {
         event.preventDefault();
@@ -26,7 +27,9 @@ function AddVolunteer() {
           "age":  age,
           "occupation": occupation,
           "email": email,
-          "about": about}),
+          "city": city,
+          "imgUrl": imgUrl
+        }),
       })
         .then((data) => {
           data.json()
@@ -38,7 +41,7 @@ function AddVolunteer() {
       setAge(0)
       setEmail('')
       setOccupation('')
-      setAbout('')  
+      setCity('')  
     }
     useEffect(() =>{
         
@@ -96,10 +99,10 @@ function AddVolunteer() {
 
         <input 
           type="text" 
-          value={about}
+          value={city}
           placeholder="City"
           className="input input-bordered w-full max-w-xs"
-          onChange={(e) => setAbout(e.target.value)}  
+          onChange={(e) => setCity(e.target.value)}  
         />
         <div className='addvolunteer__form-button'>
         <input  className="btn btn-wide" type="submit" />

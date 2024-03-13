@@ -8,7 +8,8 @@ type VolunteerToBeAdded = {
     age:  number,
     occupation: string,
     email: string,
-    city: string
+    city: string,
+    imgUrl: string
 }
 
 function VolunteerGallery() {
@@ -66,7 +67,7 @@ function VolunteerGallery() {
             <div key={volunteer.id} className="volunteer__gallery-container-card">
             <Volunteer id={volunteer.id} name={volunteer.name} age={volunteer.age} 
             occupation={volunteer.occupation} 
-            email={volunteer.email} city={volunteer.city} setRemoveVolunteer={removeVolunteer}/>
+            email={volunteer.email} city={volunteer.city} imgUrl={volunteer.imgUrl} setRemoveVolunteer={removeVolunteer}/>
             </div>
             ))}
         </div>
