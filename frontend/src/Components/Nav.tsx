@@ -7,7 +7,7 @@ function Nav () {
 
     return (
         <>
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-300 rounded">
           <Link to="/" className="navbar-start text-xl">
           VolunPair
           </Link>
@@ -23,9 +23,7 @@ function Nav () {
         <li><Link to="/volunteers">Available Volunteers</Link></li>
       </ul>
     </div>
-  </div>
-
-      
+  </div>   
 
   </div>
       <Outlet /> 
