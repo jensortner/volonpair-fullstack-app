@@ -47,24 +47,17 @@ function AddVolunteer() {
 
   const handleChange = (name: string, value: string | number) => {
     setErrors("");
-    console.log("handle change:", name);
     setInputFields({ ...inputFields, [name]: value });
   };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const erroVal = validateValues();
-    setErrors(erroVal);
-    console.log("errors aare: ", errors);
+    const errorVal = validateValues();
+    setErrors(errorVal);
 
-    if (!erroVal) {
-      finishSubmit();
+    if (!errorVal) {
+      handleFetch(inputFields);
     }
-  };
-
-  const finishSubmit = () => {
-    console.log("finish submit: ", inputFields);
-    handleFetch(inputFields);
   };
 
   async function handleFetch(inputFields: any) {
