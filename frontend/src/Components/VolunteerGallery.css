@@ -18,6 +18,12 @@
     margin-bottom: 15px;
     }
 
+.volunteer__gallery-msg-container {
+    position: fixed;
+    top: 50%;
+    z-index: 1;
+}
+
 @media screen and (min-width: 992px){
     .volunteer__gallery-container { 
         flex-direction: row;

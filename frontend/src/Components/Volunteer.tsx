@@ -1,3 +1,4 @@
+
 type VolunteerProps = {
     id: number,
     name: string,
@@ -6,13 +7,19 @@ type VolunteerProps = {
     email: string,
     city: string,
     imgUrl: string,
-    setRemoveVolunteer: any
-
+    setRemoveVolunteer: any,
+    setRemoveMsg: any
 }
 
 function Volunteer(volunteerData: VolunteerProps) {
 
-    const { id, name, age, occupation, email, city, imgUrl, setRemoveVolunteer} = volunteerData;
+    const { id, name, age, occupation, email, city, imgUrl, setRemoveVolunteer, setRemoveMsg} = volunteerData;
+
+
+    function removeConfimation(id:number, name: string) {
+        setRemoveMsg(name)
+        setRemoveVolunteer(id)
+    }
 
     return (
         
@@ -20,17 +27,16 @@ function Volunteer(volunteerData: VolunteerProps) {
         <div className="dropdown dropdown-bottom">
         <div tabIndex={0} role="button" className="btn btn-lg btn-ghost">...</div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu bg-base-100 rounded-box w-52">
-            <li onClick={() => setRemoveVolunteer(id)}><a>Remove</a></li>
-            <li><a>Update</a></li>
+            <li onClick={() => removeConfimation(id,name)}><button className=" btn btn-error">Remove</button></li>   
         </ul>
         </div>
         <figure className="px-10 pt-10">
             <img src={imgUrl} alt="src/assets/avatar.png" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
-            <h2 className="card-title">{name}</h2>
+            <h2 className="card-title">{occupation}</h2>
+            <p>{name}</p>
             <p>{age} years old</p>
-            <p>{occupation}</p>
             <p>{email}</p>
             <p>{city}</p>
         </div>
