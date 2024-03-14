@@ -9,9 +9,7 @@ function Home() {
   return (
     <div className='home__container'>
     <div className='home__container-img'>
-
     <img src="src/assets/background.png" alt="src/assets/Home.jpg" className="rounded-xl" />
-
     </div>
     <div className='home__container-buttons'>
     <div className='home__container-buttons-nav'>
