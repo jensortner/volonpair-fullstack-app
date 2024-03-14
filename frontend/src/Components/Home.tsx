@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 function Home() {
@@ -12,8 +13,13 @@ function Home() {
             <img src="src/assets/Home.jpg" alt="src/assets/Home.jpg" className="rounded-" />
         </figure>
     </div>
-    <div className='home__container-text'>
-        A Solution To Handle Volunteers
+    <div className='home__container-buttons'>
+    <div className='home__container-buttons-nav'>
+    <Link className="btn btn-wide" to="/addvolunteer">Add Volunteer</Link>
+    </div>
+    <div className='home__container-buttons-nav'>
+    <Link className="btn btn-wide" to="/volunteers">Available Volunteers</Link>
+    </div>
     </div>
     </div>
   ) 
