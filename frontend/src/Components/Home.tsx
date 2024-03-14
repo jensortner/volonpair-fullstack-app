@@ -10,7 +10,7 @@ function Home() {
     <div className='home__container'>
     <div className='home__container-img'>
 
-    <img src="src/assets/background.png" alt="src/assets/Home.jpg" className="rounded-" />
+    <img src="src/assets/background.png" alt="src/assets/Home.jpg" className="rounded-xl" />
 
     </div>
     <div className='home__container-buttons'>
