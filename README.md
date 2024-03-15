@@ -32,7 +32,7 @@ This is the view for signing up as a new volonteer.
 
 This is the wiev of the gallery where one can browse all the signed up volonteers and also search by city or occupation.
 
-<img src="./assets/hamburger-meny" alt="./assets/hamburger-meny" width="400"/>
+<img src="./assets/hamburger_meny.png" alt="./assets/hamburger_meny.png" width="400"/>
 
 a hamburger meny that is fixed to the navbar to navigate between pages.
 
