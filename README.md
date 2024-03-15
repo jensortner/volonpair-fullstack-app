@@ -7,11 +7,11 @@ VolunPair is meant as a in house tool for a organisation/agency as a central ban
 The functionalities as it stands are:
 
 1) Add a new volunteer with fields 
-	-name
-	-age
-	-email
-	-occupation
-	-city
+	- name
+	- age
+	- email
+	- occupation
+	- city
 2) Browse profiles in a gallery.
 	- Here you can search volunteers buy occupation or city
 	- Delete a volunteer
@@ -32,14 +32,14 @@ This is the view for signing up as a new volonteer.
 
 This is the wiev of the gallery where one can browse all the signed up volonteers and also search by city or occupation.
 
-
 <img src="./assets/hamburger-meny" alt="./assets/hamburger-meny" width="400"/>
 
 a hamburger meny that is fixed to the navbar to navigate between pages.
 
-<img src="./assets/hamburger-meny" alt="./assets/hamburger-meny" width="400"/>
+
+<img src="./assets/techstack.png" alt="./assets/techstack.png" width="400"/>
 
 Below shows an illustration of what technologies that are used for the frontend and backend in this project.
 
-<img src="./assets/techstack.png" alt="./assets/techstack.png" width="400"/>
+
 
