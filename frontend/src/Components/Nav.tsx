@@ -5,9 +5,10 @@ function Nav() {
   return (
     <>
       <div className="navbar bg-base-300 rounded">
-        <Link to="/" className="navbar-start text-xl">
+        <Link to="/" className="navbar-start">
           VolunPair
         </Link>
+
         <div className="navbar-end">
           <div className="dropdown dropdown-bottom dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-box">

@@ -41,7 +41,6 @@ function AddVolunteer() {
     if (inputFields.age <= 0 || inputFields.age === null) {
       return "Age must be greater than 0";
     }
-
     return "";
   };
 
@@ -58,6 +57,7 @@ function AddVolunteer() {
     if (!errorVal) {
       handleFetch(inputFields);
     }
+    event.currentTarget.reset();
   };
 
   async function handleFetch(inputFields: any) {
