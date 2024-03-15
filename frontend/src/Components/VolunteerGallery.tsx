@@ -27,7 +27,7 @@ function VolunteerGallery() {
       });
   }, [searchInput]);
 
-  function searchOccupation(input: string) {
+  function formInput(input: string) {
     setSearchInput(input);
   }
 
@@ -38,6 +38,7 @@ function VolunteerGallery() {
       .then((response) => response.json())
       .then((data) => {
         setVolunteers(data.volunteerlist);
+        setSearchInput("");
       });
   }
 
@@ -52,7 +53,7 @@ function VolunteerGallery() {
       <div className="volunteer__gallery-searchbar">
         <label className="input input-bordered flex items-center gap-2">
           <input
-            onChange={(e) => searchOccupation(e.target.value)}
+            onChange={(e) => formInput(e.target.value)}
             type="text"
             className="grow"
             placeholder="Search by occupation or city"
